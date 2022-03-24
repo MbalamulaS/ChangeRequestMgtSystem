@@ -1,0 +1,6 @@
+<h2 mat-dialog-title>Are you sure you want to delete - {{row.inst_name}}({{row.id}})?</h2>
+<hr/>
+<mat-dialog-actions align="center">
+    <button class="btn btn-secondary" (click)="onClose()"  style="margin-right: 10px;">Cancel</button>
+    <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+</mat-dialog-actions>

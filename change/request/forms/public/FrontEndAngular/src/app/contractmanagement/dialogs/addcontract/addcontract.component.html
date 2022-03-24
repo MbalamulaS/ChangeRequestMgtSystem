@@ -1,0 +1,172 @@
+<form [formGroup]="Form">
+    <h2 mat-dialog-title>Add Contract</h2>
+    <hr />
+    <mat-dialog-content>
+      <div class="form-group col-lg-12 col-sm-12 form-input">
+        <div class="form-row">
+          <div class="form-group col-lg-10 col-md-10 col-sm-10">
+            <label>Contract Title</label>
+            <input type="text" class="form-control form-control-sm" formControlName="title"
+              placeholder="Contract Title">
+            <small>
+              <div *ngIf="Form.get('title')?.touched && Form.get('title')?.invalid" class="text-danger">Title is
+                required!</div>
+            </small>
+          </div>
+          <div class="form-group col">
+            <label>Contract Stage</label>
+            <select formControlName="contract_stage" 
+                                class="form-control form-control-sm">
+                                <option value="" [selected]="true"></option>
+                                <option *ngFor="let contract_stage of contract_stages" value="{{contract_stage}}">{{contract_stage}}</option>
+             </select>
+              <small>
+                <div *ngIf="Form.get('contract_stage')?.touched && Form.get('contract_stage')?.invalid" class="text-danger">Stage is
+                  required!</div>
+              </small>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Contract Type</label>
+            <select formControlName="contract_type" 
+                                class="form-control form-control-sm">
+                                <option value="" [selected]="true"></option>
+                                <option *ngFor="let contract_type of contract_types" value="{{contract_type}}">{{contract_type}}</option>
+             </select>
+              <small>
+                <div *ngIf="Form.get('contract_type')?.touched && Form.get('contract_type')?.invalid" class="text-danger">Remark is
+                  required!</div>
+              </small>
+          </div>
+          <div class="form-group col">
+            <label>Category</label>
+            <select formControlName="contract_category_id" 
+                                class="form-control form-control-sm">
+                                <option value="" [selected]="true"></option>
+                                <option *ngFor="let contractCategory of contractCategories" value="{{contractCategory.id}}">{{contractCategory.category_name}}</option>
+             </select>
+              <small>
+                <div *ngIf="Form.get('contract_category_id')?.touched && Form.get('contract_category_id')?.invalid" class="text-danger">Category is
+                  required!</div>
+              </small>
+          </div>
+          <div class="form-group col">
+            <label>Quantity</label>
+            <input type="number" class="form-control form-control-sm" formControlName="contract_quantity"
+              placeholder="Quantity">
+            <small>
+              <div *ngIf="Form.get('contract_quantity')?.touched && Form.get('contract_quantity')?.invalid" class="text-danger">Quantity is
+                required!</div>
+            </small>
+          </div>
+          <div class="form-group col">
+            <label>Unit ( Km, No, etc.. )</label>
+            <input type="type" class="form-control form-control-sm" formControlName="contract_unit"
+              placeholder="Unit">
+            <small>
+              <div *ngIf="Form.get('contract_unit')?.touched && Form.get('contract_unit')?.invalid" class="text-danger">Unit is
+                required!</div>
+            </small>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Contractor Name</label>
+            <select formControlName="contractor_id" 
+                                class="form-control form-control-sm">
+                                <option value="" [selected]="true"></option>
+                                <option *ngFor="let contractor of contractors" value="{{contractor.id}}">{{contractor.contractor_name}}</option>
+             </select>
+              <small>
+                <div *ngIf="Form.get('contractor_id')?.touched && Form.get('contractor_id')?.invalid" class="text-danger">Contractor name is
+                  required!</div>
+              </small>
+          </div>
+            <div class="form-group col">
+                <label>Contract Amount</label>
+                <input type="number" class="form-control form-control-sm" formControlName="contract_amount"
+                  placeholder="Contract Amount">
+                <small>
+                  <div *ngIf="Form.get('contract_amount')?.touched && Form.get('contract_amount')?.invalid" class="text-danger">Amount is
+                    required!</div>
+                </small>
+              </div>
+              <div class="form-group col">
+                <label>Advance Payment</label>
+                <input type="number" class="form-control form-control-sm" formControlName="advanced_payment"
+                  placeholder="Advance Payment">
+              </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col">
+                <label>Signed Date</label>
+                <div class="input-group">
+                  <input class="form-control form-control-sm" placeholder="yyyy-mm-dd"
+                   formControlName="signed_date" ngbDatepicker #d1="ngbDatepicker" >
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
+                  </div>
+                </div>
+                <div *ngIf="Form.get('signed_date')?.touched && Form.get('signed_date')?.invalid"
+                    class="text-danger">Signed date is required</div>
+            </div>
+            <div class="form-group col">
+                <label>Commencement Date</label>
+                <div class="input-group">
+                  <input class="form-control form-control-sm" placeholder="yyyy-mm-dd"
+                   formControlName="commencement_date" ngbDatepicker #d2="ngbDatepicker" >
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+                  </div>
+                </div>
+                <div *ngIf="Form.get('commencement_date')?.touched && Form.get('commencement_date')?.invalid"
+                    class="text-danger">Commencement date is required</div>
+            </div>
+            <div class="form-group col">
+                <label>Completion Date</label>
+                <div class="input-group">
+                  <input class="form-control form-control-sm" placeholder="yyyy-mm-dd"
+                   formControlName="completion_date" ngbDatepicker #d3="ngbDatepicker" >
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d3.toggle()" type="button"></button>
+                  </div>
+                </div>
+                <div *ngIf="Form.get('completion_date')?.touched && Form.get('completion_date')?.invalid"
+                    class="text-danger">Completion date is required</div>
+            </div>
+          </div>
+        
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Attach Files</label>
+                <div class="attach-file">
+                  <input type="file" multiple (change)="onFileSelected($event)" #fileUpload>
+                </div>
+            </div>
+        <!-- </div>
+        <div class="form-row"> -->
+            <div class="form-group col attached-col" *ngIf="attachedFiles.length != 0">
+              <div>
+                <label>Attached Files</label>
+                <div *ngFor="let attachedfile of attachedFiles; index as i" class="attached-file">
+                  <div>{{i + 1}} - {{attachedfile.name}}</div>
+                  <div class="spacer"></div>
+                  <div (click)="onRemoveFile(i)" class="file-action">
+                    <div>
+                      <mat-icon>close</mat-icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button (click)="onClose()" class="btn btn-secondary" style="margin-right: 10px;">Cancel</button>
+      <button [disabled]="Form.invalid" (click)="onSubmit()" type="submit" class="btn btn-success">Submit</button>
+    </mat-dialog-actions>
+  </form>

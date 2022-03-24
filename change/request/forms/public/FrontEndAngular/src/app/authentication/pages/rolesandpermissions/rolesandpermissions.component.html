@@ -1,0 +1,109 @@
+<div class="current-route">
+    <div>Roles and Permission</div>
+</div>
+
+<div class="row no-gutters">
+    <div class="col-lg-6 col-md-12">
+        <mat-card>
+            <mat-card-content>
+                <div class="obj-header">
+                    <div class="heading">
+                        <h2>Roles</h2>
+                    </div>
+                    <div>
+                        <button class="add" mat-button (click)="onAdd()">
+                            <mat-icon style="font-size: xx-large !important;">add_circle</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <mat-table [dataSource]="rolesArray" matSort #table>
+                    <ng-container matColumnDef="sn">
+                        <mat-header-cell *matHeaderCellDef> SN </mat-header-cell>
+                        <mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="role_title">
+                        <mat-header-cell mat-sort-header *matHeaderCellDef> Role Title </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.role_title}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="action">
+                        <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                        <mat-cell *matCellDef="let row">
+                            <mat-icon [matMenuTriggerFor]="menu" style="cursor: pointer;">more_vert</mat-icon>
+                            <mat-menu #menu="matMenu">
+                                <!-- <button mat-menu-item (click)="onView(row)">
+                            <mat-icon>visibility</mat-icon>
+                            <span>View</span>
+                        </button>-->
+                        <button mat-menu-item (click)="onDelete(row)">
+                            <mat-icon style="color: red !important;">delete</mat-icon>
+                            <span>Delete</span>
+                        </button>
+                        <button mat-menu-item (click)="onUpdate(row)">
+                            <mat-icon>update</mat-icon>
+                            <span>Update</span>
+                        </button> 
+                            </mat-menu>
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <mat-paginator [length]="rolesArray.data.length" [pageSizeOptions]="[5,10,15,20]" [pageIndex]="0"
+                    [pageSize]="10" showFirstLastButtons></mat-paginator>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-lg-6">
+        <mat-card>
+            <mat-card-content>
+                <div class="heading">
+                    <h2>Permission</h2>
+                </div>
+                <form [formGroup]="rolesForm">
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Select Role</label>
+                            <select formControlName="selected_role" (change)="onRoleChange($event.target.value)"
+                                class="form-control form-control-sm">
+                                <option value="" [selected]="true"></option>
+                                <option *ngFor="let role of roles" value="{{role.id}}">{{role.role_title}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="row" style="background: whitesmoke;">
+                    <div class="col">
+                        <div cdkDropListGroup>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6 permission-container">
+                                    <h3>Current Permission</h3>
+
+                                    <div cdkDropList [cdkDropListData]="rolepermissions" class="permission-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div class="permission-box" *ngFor="let rolepermission of rolepermissions"
+                                            cdkDrag>{{rolepermission.permission_code}}</div>
+                                        <div class="permission-box" *ngIf="rolepermissions.length == 0">No permission</div>
+                                    </div>
+                                </div>
+
+                                <div class="col permission-container">
+                                    <h3>Available Permission</h3>
+
+                                    <div cdkDropList [cdkDropListData]="allpermissions" class="permission-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div class="permission-box" *ngFor="let permission of allpermissions" cdkDrag>
+                                            {{permission.permission_code}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 10px;">
+                            <button [disabled]="selected_role_id == null || selected_role_id == ''" class="btn btn-success" (click)="onsavePermission()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

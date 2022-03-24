@@ -1,0 +1,39 @@
+
+    <h2 mat-dialog-title>Profile</h2>
+    <hr />
+    <mat-dialog-content>
+        <div class="form-group col-lg-12 col-sm-12 form-input">
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Name</label>
+              <input type="text" class="form-control form-control-sm" placeholder="{{name}}" disabled>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Email</label>
+              <input type="text" class="form-control form-control-sm" placeholder="{{email}}" disabled>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Role</label>
+              <input type="text" class="form-control form-control-sm" placeholder="{{role}}" disabled>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Institution</label>
+              <input type="text" class="form-control form-control-sm" placeholder="{{institution}}" disabled>
+            </div>
+          </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="btn btn-secondary" (click)="onClose()" style="margin-right: 10px;">Cancel</button>
+        
+    </mat-dialog-actions>
+  <!-- 
+  [disabled]="RegisterForm.invalid"  -->
+
+  <!-- (click)="onSubmit()" -->

@@ -1,0 +1,207 @@
+====NEW MNRT WEBSITE DATABASE====mnrt_web
+
+----TABLES----
+tbl_setting
+
+tleaders
+	(
+	leader_id VARCHAR(20),
+	leader_name VARCHAR(50),
+	leader_title VARCHAR(50),
+	start_date,
+	end_date,
+	check_no NULL VARCHAR(50),
+	picture_link VARCHAR(100),
+	biograph TEXT,
+	status VARCHAR(20)
+	)
+
+tbl_news
+	(
+	news_id INT,
+	published_date,
+	news_title VARCHAR(100),
+	news_des VARCHAR(100),
+	video_link VARCHAR(100),
+	photo_link VARCHAR(100),
+	news_status VARCHAR(10)
+	)
+	
+tbl_gallery
+	(
+	gallery_id int AUTO,
+	gallery_name VARCHAR (100),
+	gallery_des TEXT,
+	media_link VARCHAR(100),
+	media_category VARCHAR(100)
+        )
+	
+tbl_statistics
+	(
+	stat_id int AUTO,
+	created_date,
+	updated_date,
+	category VARCHAR (100),
+	item_name VARCHAR (100),
+	item_count int,
+	stat_source
+	)
+	
+tbl_announcements
+	(
+	ann_id int AUTO,
+	ann_title VARCHAR (100),
+	created_date,
+	ann_des TEXT,
+	attachment
+        )
+
+tbl_directors
+	(
+	id int AUTO,
+	name VARCHAR (100),
+	title VARCHAR (100),
+	profile_image,
+	FOREIGN KEY (id)  REFERENCING  department (dep_id)
+        )
+	
+tbl_stakeholders
+	(
+	sthdrs_id int AUTO,
+	created_date,
+	categories VARCHAR (100),
+	sthdrs_name VARCHAR (100),
+	licence_status VARCHAR (20),
+	physical_address VARCHAR (100),
+	postal_address VARCHAR (20),
+	phone_number VARCHAR (20),
+	email VARCHAR (100),
+	website VARCHAR (100),
+	country VARCHAR (100)
+        )
+
+tbl_documents
+	(
+	doc_id int AUTO,
+	doc_title VARCHAR (100),
+	doc_category VARCHAR (100),
+	created_date,
+	doc_link VARCHAR (100)
+        )
+
+tbl_projects
+	(
+	project_id int AUTO,
+	project_title VARCHAR (100),
+	project_cost VARCHAR (100),
+	project_funder VARCHAR (100),
+	start_date,
+	end_date,
+	status VARCHAR (20),
+        )
+
+tbl_protected_areas
+	(
+	id int AUTO,
+	category VARCHAR (100),
+	latitude VARCHAR (20),
+	longitude VARCHAR (20),
+	location VARCHAR (100)
+	name VARCHAR (100),
+	description TEXT,
+	size VARCHAR (100),
+	shaped_files_id
+        )
+tbl_shaped_files
+	(
+	shape_id, 
+	file_link VARCHAR (100) 
+	)
+tbl_advertisements
+	(
+	adv_id int AUTO,
+	adv_title VARCHAR (100),
+	created_date,
+	adv_des TEXT,
+	attachment
+        )
+tbl_tenders
+	(
+	tender_number VARCHAR (100),
+	tender_title VARCHAR (100),
+	tender_des TEXT,
+	open_date,
+	close_date,
+	attachment_link VARCHAR (100)
+        )
+tbl_departments
+	(
+	dept_id int AUTO,
+	dept_vote VARCHAR (100),
+	dept_subvote VARCHAR (100),
+	dept_name VARCHAR (100)
+        )
+tbl_speeches
+	(
+	speech_id int AUTO,
+	speech_title VARCHAR (100),
+	author TEXT,
+	location VARCHAR (50),
+	speech_date DATE,
+	text_link VARCHAR (50),
+	audio_link VARCHAR (50),
+	video_link VARCHAR (50)
+        )
+tbl_social_media
+	(
+	socmed_id int AUTO,
+        socmed_name VARCHAR (50),
+	socmed_url VARCHAR (100)
+	)
+tbl_related_links
+	(
+	link_id int AUTO,
+	link_url VARCHAR (100),
+	organization VARCHAR (50)
+	)
+tbl_mnrt_systems
+	(
+	sys_id int AUTO,
+	system_name VARCHAR (50),
+	system_link VARCHAR (100)
+	system_des TEXT
+	)
+tbl_contacts
+	(
+	contact_id int AUTO,
+	contact_des TEXT,
+	category VARCHAR (50),
+	mobile VARCHAR (100),
+	email VARCHAR (100),
+	fax VARCHAR (100),
+        )
+
+tbl_event_calendar
+	(
+	event_id int AUTO,
+	event_name VARCHAR (100),
+	event_des TEXT,
+	location VARCHAR (50),
+	event_date DATE,
+	end_date
+	participants VARCHAR (50),
+	guest_of_honor	VARCHAR (50)
+        )
+
+
+TO EACH TABLE THE FOLLOWING columns
+
+updated_by
+created_by
+deleted_at
+deteted_by
+status
+
+
+
+

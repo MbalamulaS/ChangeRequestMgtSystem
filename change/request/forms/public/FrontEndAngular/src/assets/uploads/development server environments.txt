@@ -1,0 +1,13 @@
+------------MANY SITES SINGLE DEVELOPMENT SERVER SERVER--------
+PARALLEL site: demo.maliasili.go.tz/asert
+site url: demo.maliasili.go.tz/new-mnrt-website 
+
+===SSH===
+	==host==
+		-172.32.1.10
+	==username==
+		-maliasili
+	==username==
+		-NgoroNgor0@2021
+===VHOST===
+	PORT-443 SSL

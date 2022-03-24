@@ -1,0 +1,65 @@
+<form [formGroup]="RegisterForm">
+    <h2 mat-dialog-title>Register New User</h2>
+    <hr />
+    <mat-dialog-content>
+        <div class="form-group col-lg-12 col-sm-12 form-input">
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Name</label>
+              <input type="text" class="form-control form-control-sm" formControlName="name" placeholder="Enter Name">
+              <small><div *ngIf="RegisterForm.get('name')?.touched && RegisterForm.get('name')?.invalid" class="text-danger">Name is required</div></small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Email</label>
+              <input type="text" class="form-control form-control-sm" formControlName="email" placeholder="Enter Email">
+              <small><div *ngIf="RegisterForm.get('email')?.touched && RegisterForm.get('email')?.invalid" class="text-danger">Enter valid email</div></small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+                <label >Institution</label>
+                <select formControlName="institution" class="form-control form-control-sm">
+                 <option value="" [selected]="true"></option>
+                  <option *ngFor="let institution of institutions" value="{{institution.id}}" >{{institution.inst_name}}</option>
+                </select>
+                <div *ngIf="RegisterForm.get('institution')?.touched && RegisterForm.get('institution')?.invalid"
+                    class="text-danger">Institution is required</div>
+              </div>
+              <div class="form-group col">
+                <label >Role</label>
+                <select formControlName="role" class="form-control form-control-sm">
+                    <option value="" [selected]="true"></option>
+                    <option *ngFor="let role of roles" value="{{role.id}}" >{{role.role_title}}</option>
+                </select>
+                <div *ngIf="RegisterForm.get('role')?.touched && RegisterForm.get('role')?.invalid"
+                    class="text-danger">Role is required</div>
+              </div>
+        </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Password</label>
+              <input type="password" class="form-control form-control-sm" formControlName="password" placeholder="Enter Password">
+              <small><div *ngIf="RegisterForm.get('password')?.touched && RegisterForm.get('password')?.invalid" class="text-danger">Password is required</div></small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Confirm Password</label>
+              <input type="password" class="form-control form-control-sm" formControlName="password2" placeholder="Confirm Password">
+              <small><div *ngIf="RegisterForm.get('password2')?.touched && RegisterForm.get('password2')?.invalid" class="text-danger">Confirm your password</div></small>
+            </div>
+          </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="btn btn-secondary" (click)="onClose()" style="margin-right: 10px;">Cancel</button>
+        <button [disabled]="RegisterForm.invalid" (click)="onSubmit()" type="submit" 
+            class="btn btn-success">Submit</button>
+    </mat-dialog-actions>
+</form>
+  <!-- 
+  [disabled]="RegisterForm.invalid"  -->
+
+  <!-- (click)="onSubmit()" -->

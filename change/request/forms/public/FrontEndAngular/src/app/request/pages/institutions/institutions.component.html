@@ -1,0 +1,73 @@
+<div class="current-route">
+    <div>System Setup / Institutions</div>
+</div>
+
+<mat-card>
+    <mat-card-content>
+        <div class="obj-header">
+            <div class="heading">
+                <h2>Institutions</h2>
+            </div>
+            <div>
+                <button class="add" mat-button (click)="onAdd()">
+                    <mat-icon style="font-size: xx-large !important;">add_circle</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="filter">
+            <input (keyup)="applyFilter($any($event.target).value)" matInput placeholder="Search" class="form-control shadow-none">
+        </div>
+        <mat-table [dataSource]="instArray" matSort #leaderstable>
+            <ng-container matColumnDef="sn">
+                <mat-header-cell *matHeaderCellDef> SN </mat-header-cell>
+                <mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="inst_name">
+                <mat-header-cell mat-sort-header *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.inst_name}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="vote_code">
+                <mat-header-cell mat-sort-header *matHeaderCellDef> Vote Code </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.vote_code}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="vote_name">
+                <mat-header-cell mat-sort-header *matHeaderCellDef> Vote Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.vote_name}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="sub_vote_no">
+                <mat-header-cell mat-sort-header *matHeaderCellDef> Sub Vote </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.sub_vote_no}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="sub_vote_name">
+                <mat-header-cell mat-sort-header *matHeaderCellDef> Sub Vote Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.sub_vote_name}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <mat-icon [matMenuTriggerFor]="menu" style="cursor: pointer;">more_vert</mat-icon>
+                    <mat-menu #menu="matMenu">
+                        <!-- <button mat-menu-item (click)="onView(row)">
+                    <mat-icon>visibility</mat-icon>
+                    <span>View</span>
+                </button>-->
+                <button mat-menu-item (click)="onDelete(row)">
+                    <mat-icon style="color: red !important;">delete</mat-icon>
+                    <span>Delete</span>
+                </button>
+                <button mat-menu-item (click)="onUpdate(row)">
+                    <mat-icon>update</mat-icon>
+                    <span>Update</span>
+                </button> 
+                    </mat-menu>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [length]="instArray.data.length" [pageSizeOptions]="[5,10,15,20]" [pageIndex]="0"
+            [pageSize]="10" showFirstLastButtons></mat-paginator>
+
+    </mat-card-content>
+</mat-card>
+

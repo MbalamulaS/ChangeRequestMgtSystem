@@ -1,0 +1,553 @@
+%PDF-1.3
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.28 841.89]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<</Length 2568>>
+stream
+0.57 w
+0 G
+q
+q BT 0 g 42.52 784.43 Td
+0 -18.00 Td
+0.000 g
+/F10 18.00 Tf (Transaction Reconciliation) Tj
+ET Q
+q BT 0 g 42.52 727.38 Td
+1.42 -12.00 Td
+/F9 12.00 Tf (Transaction Date: 2021-09-25) Tj
+0 -12.00 Td
+/F9 12.00 Tf (Request ID: 261) Tj
+ET Q
+q BT 0 g 42.52 691.38 Td
+0 -12.00 Td
+/F9 12.00 Tf (1. Transactions that are in both TTB and GePG.) Tj
+ET Q
+q BT 0 g 42.52 667.38 Td
+0 -12.00 Td
+0.000 0.000 1.000 rg
+/F9 12.00 Tf (There is no data retrieved.) Tj
+ET Q
+0.78 0.78 0.78 rg
+42.52 627.04 23.45 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+51.02 574.88 Td
+(S/N) Tj
+ET
+0.78 0.78 0.78 rg
+65.97 627.04 35.61 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+74.48 574.88 Td
+(BillId) Tj
+ET
+0.78 0.78 0.78 rg
+101.58 627.04 26.06 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+110.09 574.88 Td
+(Bill Req Id) Tj
+ET
+0.78 0.78 0.78 rg
+127.64 627.04 58.20 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+136.15 574.88 Td
+(TrxDtTm) Tj
+ET
+0.78 0.78 0.78 rg
+185.84 627.04 54.72 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+194.34 574.88 Td
+(PaidAmt) Tj
+ET
+0.78 0.78 0.78 rg
+240.56 627.04 50.38 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+249.06 574.88 Td
+(Bill Amount) Tj
+ET
+0.78 0.78 0.78 rg
+290.94 627.04 50.38 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+299.44 574.88 Td
+(Bill Eqv Amount) Tj
+ET
+0.78 0.78 0.78 rg
+341.32 627.04 72.96 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+349.82 574.88 Td
+(BillCtrNum) Tj
+ET
+0.78 0.78 0.78 rg
+414.28 627.04 57.33 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+422.78 574.88 Td
+(pspTrxId) Tj
+ET
+q BT 0 g 42.52 160.63 Td
+0 -12.00 Td
+0.000 g
+/F9 12.00 Tf (2. Transactions that are in GePG Only.) Tj
+ET Q
+q BT 0 g 42.52 136.63 Td
+0 -12.00 Td
+0.000 0.000 1.000 rg
+/F9 12.00 Tf (There is no data retrieved.) Tj
+ET Q
+0.78 0.78 0.78 rg
+42.52 96.29 22.36 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+51.02 44.13 Td
+(S/N) Tj
+ET
+0.78 0.78 0.78 rg
+64.88 96.29 33.96 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+73.39 44.13 Td
+(BillId) Tj
+ET
+0.78 0.78 0.78 rg
+98.84 96.29 56.33 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+107.35 44.13 Td
+(TrxDtTm) Tj
+ET
+0.78 0.78 0.78 rg
+155.17 96.29 52.18 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+163.67 44.13 Td
+(PaidAmt) Tj
+ET
+0.78 0.78 0.78 rg
+207.35 96.29 56.33 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+215.86 44.13 Td
+(DptName) Tj
+ET
+0.78 0.78 0.78 rg
+263.68 96.29 86.97 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+272.18 44.13 Td
+(DptEmailAddr) Tj
+ET
+0.78 0.78 0.78 rg
+350.65 96.29 69.58 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+359.16 44.13 Td
+(BillCtrNum) Tj
+ET
+0.78 0.78 0.78 rg
+420.23 96.29 53.84 -373.61 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+428.73 44.13 Td
+(pspTrxId) Tj
+ET
+q BT 0 g 42.52 -370.12 Td
+0 -12.00 Td
+ET Q
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.28 841.89]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<</Length 1905>>
+stream
+0.57 w
+0 G
+q BT 0 g 42.52 841.89 rgb(0, 0, 0) Td
+0 -12.00 Td
+0.000 g
+/F9 12.00 Tf (3. Transaction that are in TTB Only.) Tj
+ET Q
+0.78 0.78 0.78 rg
+42.52 789.54 36.98 -164.98 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+51.02 737.39 Td
+(S/N) Tj
+ET
+0.78 0.78 0.78 rg
+79.50 789.54 56.15 -164.98 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+88.00 737.39 Td
+(BillId) Tj
+ET
+0.78 0.78 0.78 rg
+135.65 789.54 80.80 -164.98 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+144.15 737.39 Td
+(Request Date) Tj
+ET
+0.78 0.78 0.78 rg
+216.45 789.54 79.43 -164.98 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+224.95 737.39 Td
+(Bill Amount) Tj
+ET
+0.78 0.78 0.78 rg
+295.88 789.54 79.43 -164.98 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+304.38 737.39 Td
+(Bill Eqv Amount) Tj
+ET
+0.78 0.78 0.78 rg
+375.31 789.54 94.50 -164.98 re
+B
+BT
+/F2 16 Tf
+18.4 TL
+0 g
+383.81 737.39 Td
+(Exchange Rate) Tj
+ET
+42.52 624.57 36.98 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+51.02 572.41 Td
+(1) Tj
+ET
+79.50 624.57 56.15 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+88.00 572.41 Td
+(238) Tj
+ET
+135.65 624.57 80.80 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+144.15 572.41 Td
+(2021-09-2) Tj
+T* (5) Tj
+T* (09:32:57) Tj
+ET
+216.45 624.57 79.43 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+224.95 572.41 Td
+(800) Tj
+ET
+295.88 624.57 79.43 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+304.38 572.41 Td
+(1840000) Tj
+ET
+375.31 624.57 94.50 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+383.81 572.41 Td
+(2300) Tj
+ET
+42.52 459.59 36.98 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+51.02 407.43 Td
+(2) Tj
+ET
+79.50 459.59 56.15 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+88.00 407.43 Td
+(240) Tj
+ET
+135.65 459.59 80.80 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+144.15 407.43 Td
+(2021-09-2) Tj
+T* (5) Tj
+T* (08:25:25) Tj
+ET
+216.45 459.59 79.43 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+224.95 407.43 Td
+(400) Tj
+ET
+295.88 459.59 79.43 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+304.38 407.43 Td
+(920000) Tj
+ET
+375.31 459.59 94.50 -164.98 re
+S
+BT
+/F1 16 Tf
+18.4 TL
+0 g
+383.81 407.43 Td
+(2300) Tj
+ET
+Q
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R ]
+/Count 2
+>>
+endobj
+7 0 obj
+<</BaseFont/Helvetica/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+8 0 obj
+<</BaseFont/Helvetica-Bold/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+9 0 obj
+<</BaseFont/Helvetica-Oblique/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+10 0 obj
+<</BaseFont/Helvetica-BoldOblique/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+11 0 obj
+<</BaseFont/Courier/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+12 0 obj
+<</BaseFont/Courier-Bold/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+13 0 obj
+<</BaseFont/Courier-Oblique/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+14 0 obj
+<</BaseFont/Courier-BoldOblique/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+15 0 obj
+<</BaseFont/Times-Roman/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+16 0 obj
+<</BaseFont/Times-Bold/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+17 0 obj
+<</BaseFont/Times-Italic/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+18 0 obj
+<</BaseFont/Times-BoldItalic/Type/Font
+/Encoding/WinAnsiEncoding
+/Subtype/Type1>>
+endobj
+19 0 obj
+<</BaseFont/ZapfDingbats/Type/Font
+/Encoding/StandardEncoding
+/Subtype/Type1>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+/F6 12 0 R
+/F7 13 0 R
+/F8 14 0 R
+/F9 15 0 R
+/F10 16 0 R
+/F11 17 0 R
+/F12 18 0 R
+/F13 19 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+20 0 obj
+<<
+/Producer (jsPDF 1.2.61-debug 2016-03-01T16:15:jameshall)
+/CreationDate (D:20210926111921+03'00')
+>>
+endobj
+21 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000004800 00000 n 
+0000006102 00000 n 
+0000000009 00000 n 
+0000000118 00000 n 
+0000002736 00000 n 
+0000002845 00000 n 
+0000004863 00000 n 
+0000004953 00000 n 
+0000005048 00000 n 
+0000005146 00000 n 
+0000005249 00000 n 
+0000005338 00000 n 
+0000005432 00000 n 
+0000005529 00000 n 
+0000005630 00000 n 
+0000005723 00000 n 
+0000005815 00000 n 
+0000005909 00000 n 
+0000006007 00000 n 
+0000006340 00000 n 
+0000006460 00000 n 
+trailer
+<<
+/Size 22
+/Root 21 0 R
+/Info 20 0 R
+>>
+startxref
+6564
+%%EOF

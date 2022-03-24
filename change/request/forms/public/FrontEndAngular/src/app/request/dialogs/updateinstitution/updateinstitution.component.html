@@ -1,0 +1,48 @@
+<form [formGroup]="instForm">
+    <h2 mat-dialog-title>Add Institutions</h2>
+    <hr />
+    <mat-dialog-content>
+        <div class="form-group col-lg-12 col-sm-12 form-input">
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Name</label>
+              <input type="text" class="form-control form-control-sm" formControlName="inst_name" placeholder="Enter Name">
+              <small><div *ngIf="instForm.get('inst_name')?.touched && instForm.get('inst_name')?.invalid" class="text-danger">Name is required</div></small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Vote Code</label>
+              <input type="number" class="form-control form-control-sm" formControlName="vote_code" placeholder="Vote Code">
+              <small><div *ngIf="instForm.get('vote_code')?.touched && instForm.get('vote_code')?.invalid" class="text-danger">Vote code is required</div></small>
+            </div>
+            <div class="form-group col">
+                <label>Vote Name</label>
+                <input type="text" class="form-control form-control-sm" formControlName="vote_name" placeholder="Vote name">
+                <small><div *ngIf="instForm.get('vote_name')?.touched && instForm.get('vote_name')?.invalid" class="text-danger">Vote name is required</div></small>
+              </div>
+          </div>
+        <div class="form-row">
+            <div class="form-group col">
+              <label>Sub Vote Code</label>
+              <input type="number" class="form-control form-control-sm" formControlName="sub_vote_no" placeholder="Sub Vote code">
+              <small><div *ngIf="instForm.get('sub_vote_no')?.touched && instForm.get('sub_vote_no')?.invalid" class="text-danger"> Sub Vote code is required</div></small>
+            </div>
+            <div class="form-group col">
+                <label>Sub Vote Name</label>
+                <input type="text" class="form-control form-control-sm" formControlName="sub_vote_name" placeholder="Sub Vote name">
+                <small><div *ngIf="instForm.get('sub_vote_name')?.touched && instForm.get('sub_vote_name')?.invalid" class="text-danger">Sub Vote name is required</div></small>
+              </div>
+          </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="btn btn-secondary" (click)="onClose()" style="margin-right: 10px;">Cancel</button>
+        <button [disabled]="instForm.invalid" (click)="onSubmit()" type="submit" 
+            class="btn btn-success">Submit</button>
+    </mat-dialog-actions>
+</form>
+  <!-- 
+  [disabled]="instForm.invalid"  -->
+
+  <!-- (click)="onSubmit()" -->

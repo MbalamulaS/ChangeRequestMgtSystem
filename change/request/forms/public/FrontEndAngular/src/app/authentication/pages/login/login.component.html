@@ -1,0 +1,51 @@
+
+<!-- spinner -->
+<div class="spinner-container">
+  <div *ngIf="sharedService.isLoading | async">
+      <mat-progress-bar mode="indeterminate" style="color: goldenrod;"></mat-progress-bar>
+  </div>
+</div>
+
+<div class="login-content">
+  <div class="title">
+    <h2>THE UNITED REPUBLIC OF TANZANIA</h2>
+    <h3>MINISTRY OF NATURAL RESOURCES AND TOURISM</h3>
+  </div>
+    <div class="login-form">
+      <form [formGroup]="LoginForm">
+          <div class="banner">
+              <img src="/assets/images/logo.png">
+          </div>
+        <div class="form-header">
+          Change Request Management
+        </div>
+        <div class="form-group col-lg-12 col-sm-12 form-input">
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Email</label>
+              <input type="text" class="form-control form-control-sm" formControlName="email" placeholder="Enter Email">
+            <small><div *ngIf="LoginForm.get('email')?.touched && LoginForm.get('email')?.invalid" class="text-danger">Enter valid email</div></small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Password</label>
+              <input type="password" class="form-control form-control-sm" formControlName="password" placeholder="Enter Password">
+              <small><div *ngIf="LoginForm.get('password')?.touched && LoginForm.get('password')?.invalid" class="text-danger">Passsword is required</div></small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <button [disabled]="LoginForm.invalid"  type="submit" class="form-control btn btn-success" (click)="onLogin()">Login</button>
+            </div>
+          </div>
+          <div (click)="forgotPassword()" class="forgot-password">
+            Forgot Passsword?
+          </div>
+          
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- 
+  [disabled]="LoginForm.invalid"  -->

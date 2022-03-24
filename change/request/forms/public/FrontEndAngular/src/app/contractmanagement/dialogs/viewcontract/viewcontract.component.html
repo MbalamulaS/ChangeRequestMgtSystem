@@ -1,0 +1,88 @@
+<h2 mat-dialog-title>Contract Details</h2>
+    <hr />
+    <mat-dialog-content>
+      <div class="form-group col-lg-12 col-sm-12 form-input">
+        <div class="form-row">
+          <div class="form-group col-lg-10 col-md-10 col-sm-10">
+            <label>Contract Title</label>
+            <input type="text" class="form-control form-control-sm" placeholder="{{contract_title}}" disabled>
+          </div>
+          <div class="form-group col">
+            <label>Contract Stage</label>
+            <input type="text" class="form-control form-control-sm" placeholder="{{contract_stage}}" disabled>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Contract Type</label>
+            <input type="text" class="form-control form-control-sm" placeholder="{{contract_type}}" disabled>
+          </div>
+          <div class="form-group col">
+            <label>Category</label>
+            <input placeholder="{{contract_category_name}}" class="form-control form-control-sm" disabled>
+          </div>
+          <div class="form-group col">
+            <label>Quantity</label>
+            <input type="number" class="form-control form-control-sm" placeholder="{{contract_quantity | number:'1.2-2'}}" disabled>
+          </div>
+          <div class="form-group col">
+            <label>Unit</label>
+            <input type="type" class="form-control form-control-sm" placeholder="{{contract_unit}}" disabled>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Contractor Name</label>
+              <input type="text" class="form-control form-control-sm" placeholder="{{contractor_name}}" disabled >
+            </div>
+            <div class="form-group col">
+              <label>Contract Amount</label>
+              <input type="number" class="form-control form-control-sm" placeholder="{{contract_amount | number:'1.2-2'}} Tsh" disabled >
+            </div>
+            <div class="form-group col">
+              <label>Advance Payment</label>
+              <input type="number" class="form-control form-control-sm" placeholder="{{advanced_payment | number:'1.2-2'}} Tsh" disabled>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col">
+                <label>Signed Date</label>
+                <div class="input-group">
+                  <input type="text" class="form-control form-control-sm" placeholder="{{signed_date | date:'MMM d, yyyy'}}" disabled>
+                </div>
+            </div>
+            <div class="form-group col">
+                <label>Commencement Date</label>
+                <div class="input-group">
+                  <input type="text"  class="form-control form-control-sm" 
+                   placeholder="{{commencement_date | date:'MMM d, yyyy'}}" disabled >
+                </div>
+            </div>
+            <div class="form-group col">
+                <label>Completion Date</label>
+                <div class="input-group">
+                  <input type="text" class="form-control form-control-sm" 
+                   placeholder="{{completion_date | date:'MMM d, yyyy'}}" disabled>
+                  
+                </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col attached-col" *ngIf="attachedFiles.length != 0">
+                <div>
+                    <label>Contract Files</label>
+                    <div *ngFor="let attachedfile of attachedFiles; index as i" class="attached-file">
+                        <div>{{i + 1}} - {{attachedfile.title}}</div>
+                        <div class="spacer"></div>
+                        <div><a href="/assets/uploads/{{attachedfile.title}}" target="true"><i
+                                    class="fa fa-download fa-lg" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button (click)="onClose()" class="btn btn-secondary" style="margin-right: 10px;">Cancel</button>
+      <!-- <button [disabled]="Form.invalid" (click)="onSubmit()" type="submit" class="btn btn-success">Submit</button> -->
+    </mat-dialog-actions>

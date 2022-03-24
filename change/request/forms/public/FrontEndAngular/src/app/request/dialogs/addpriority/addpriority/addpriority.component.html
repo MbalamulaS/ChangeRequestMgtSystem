@@ -1,0 +1,24 @@
+<form [formGroup]="priorityForm">
+    <h2 mat-dialog-title>Add Priority</h2>
+    <hr />
+    <mat-dialog-content>
+        <div class="form-group col-lg-12 col-sm-12 form-input">
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Priority</label>
+              <input type="text" class="form-control form-control-sm" formControlName="priority_name" placeholder="Enter Name">
+              <small><div *ngIf="priorityForm.get('priority_name')?.touched && priorityForm.get('priority_name')?.invalid" class="text-danger">Name is required</div></small>
+            </div>
+          </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="btn btn-secondary" (click)="onClose()" style="margin-right: 10px;">Cancel</button>
+        <button [disabled]="priorityForm.invalid" (click)="onSubmit()" type="submit" 
+            class="btn btn-success">Submit</button>
+    </mat-dialog-actions>
+</form>
+  <!-- 
+  [disabled]="priorityForm.invalid"  -->
+
+  <!-- (click)="onSubmit()" -->

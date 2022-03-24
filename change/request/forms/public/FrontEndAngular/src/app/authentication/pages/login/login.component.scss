@@ -1,0 +1,58 @@
+@import 'src/environments/_variables';
+
+.login-content{
+    position: absolute;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: calc(15px + 3vw);
+    }
+  .login-form{
+    min-width: calc(150px + 20vw);
+  }
+  .title{
+    h2{
+      font-size: 28px;
+      color: black;
+    }
+    h3{
+      font-size: 20px;
+      color: black;
+    }
+  }
+  .banner{
+        padding-bottom:20px;
+  }
+  .form-header{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: $green_color;
+      padding: 20px;
+      font-size: 30px;
+      color: white;
+  }
+  .btn-success{
+    background:$green_color;
+  }
+  .form-input{
+    width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      text-align: left;
+      padding:20px 10px 0px 10px;
+      font-size: 18px;
+      background-color: white;
+      //border: 1px solid $green_color;
+  }
+  
+  .forgot-password{
+    font-size: 15px;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }

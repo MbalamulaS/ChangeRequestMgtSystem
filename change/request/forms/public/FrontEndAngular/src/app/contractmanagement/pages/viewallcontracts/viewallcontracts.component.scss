@@ -1,0 +1,49 @@
+.activity{
+    margin: 0px 5px 5px 5px;
+}
+
+.target{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.add{
+    border: none !important;
+    background: none !important;
+    color: #135029 !important;
+    
+}
+
+
+.contract-details{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    align-items: flex-start;
+    font-weight: 400;
+    font-size: 1.0rem;
+    padding: 10px;
+}
+
+.button-list{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.mat-column-action {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 10% !important;
+    width: 10% !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+

@@ -1,0 +1,52 @@
+<form [formGroup]="Form">
+    <h2 mat-dialog-title>Add Contractor</h2>
+    <hr />
+    <mat-dialog-content>
+      <div class="form-group col-lg-12 col-sm-12 form-input">
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Name</label>
+            <input type="text" class="form-control form-control-sm" formControlName="contractor_name"
+              placeholder="Name">
+            <small>
+              <div *ngIf="Form.get('contractor_name')?.touched && Form.get('contractor_name')?.invalid" class="text-danger">Name is
+                required!</div>
+            </small>
+          </div>
+          <div class="form-group col">
+            <label>Address</label>
+            <input type="text" class="form-control form-control-sm" formControlName="contractor_address"
+              placeholder="Address">
+            <small>
+              <div *ngIf="Form.get('contractor_address')?.touched && Form.get('contractor_address')?.invalid" class="text-danger">Address is
+                required!</div>
+            </small>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+              <label>Phone</label>
+              <input type="text" class="form-control form-control-sm" formControlName="contractor_phone"
+                placeholder="Phone">
+              <small>
+                <div *ngIf="Form.get('contractor_phone')?.touched && Form.get('contractor_phone')?.invalid" class="text-danger">Phone is
+                  required!</div>
+              </small>
+            </div>
+            <div class="form-group col">
+              <label>Email</label>
+              <input type="text" class="form-control form-control-sm" formControlName="contractor_email"
+                placeholder="Email">
+              <small>
+                <div *ngIf="Form.get('contractor_email')?.touched && Form.get('contractor_email')?.invalid" class="text-danger">Email is
+                  required!</div>
+              </small>
+            </div>
+          </div>
+    </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button (click)="onClose()" class="btn btn-secondary" style="margin-right: 10px;">Cancel</button>
+      <button [disabled]="Form.invalid" (click)="onSubmit()" type="submit" class="btn btn-success">Submit</button>
+    </mat-dialog-actions>
+  </form>

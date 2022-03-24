@@ -1,0 +1,5 @@
+gfs_code,gfs_desc,unit
+45654456,maintenanc car,item
+45654456,computer hardwares,item
+45654456,stationery,item
+45654456,photocopies,item
