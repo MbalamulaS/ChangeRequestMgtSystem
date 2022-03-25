@@ -1,0 +1,33 @@
+<form [formGroup]="Form">
+    <h2 mat-dialog-title>Update Contract Stage</h2>
+    <hr />
+    <mat-dialog-content>
+      <div class="form-group col-lg-12 col-sm-12 form-input">
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Current Stage</label>
+                <input type="text" class="form-control form-control-sm" disabled
+                  placeholder="{{current_contract_stage}}">
+              </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label>Contract Stage</label>
+                <select formControlName="contract_stage" 
+                                    class="form-control form-control-sm">
+                                    <option value="" [selected]="true"></option>
+                                    <option *ngFor="let contract_stage of contract_stages" value="{{contract_stage}}">{{contract_stage}}</option>
+                 </select>
+                  <small>
+                    <div *ngIf="Form.get('contract_stage')?.touched && Form.get('contract_stage')?.invalid" class="text-danger">Stage is
+                      required!</div>
+                  </small>
+              </div>
+          </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button (click)="onClose()" class="btn btn-secondary" style="margin-right: 10px;">Cancel</button>
+      <button [disabled]="Form.invalid" (click)="onSubmit()" type="submit" class="btn btn-success">Submit</button>
+    </mat-dialog-actions>
+  </form>

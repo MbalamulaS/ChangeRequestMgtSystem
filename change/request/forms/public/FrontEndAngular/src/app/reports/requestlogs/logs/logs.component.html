@@ -1,0 +1,112 @@
+<div class="current-route">
+    <div>Reports/Request Logs</div>
+</div>
+<div class="row no-gutters">
+    <div class="col-lg-12 col-md-12">
+        <mat-card>
+            <mat-card-content>
+                <div class="obj-header">
+                    <div class="heading">
+                        <h2>Change Request Logs</h2>
+                    </div>
+                </div>
+
+                <!-- <form [formGroup]="Form" >
+                    <div class="form-row" *ngIf="permissions.viewchecklistddp">
+                        <div class="form-group col-lg-4">
+                            <label>Select Institution</label>
+                            <select formControlName="selected_role" (change)="onInstitutionChange($event.target.value)"
+                                class="form-control form-control-sm">
+                                <option value="" [selected]="true"></option>
+                                <option value="all" >-All-</option>
+                                <option *ngFor="let institution of institutions" value="{{institution.id}}">{{institution.inst_name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </form> -->
+            </mat-card-content>
+        </mat-card>
+        <mat-card style="margin-top: 10px;">
+            <mat-card-content>
+                <!-- report preview -->
+                <table class="table table-bordered table-striped no-border" id="actsummary" #actsummary>
+                    <thead >
+                        <tr class="no-border header-row">
+                            <td colspan="7" class="no-border align-center" >
+                                <h1 style="margin: 0; padding: 0;">THE UNITED REPUBLIC OF TANZANIA</h1>
+                            </td>
+                        </tr>
+                        <tr class="no-border header-row">
+                            <td colspan="7" class="no-border align-center" >
+                                 <img src="/assets/images/logo.png" alt="" class="log-img">
+                            </td>
+                        </tr>
+                        <tr class="no-border header-row">
+                            <td colspan="7" class="no-border align-center" >
+                                <h2 style="margin: 0; padding: 0;">MINISTRY OF NATURAL RESOURCE AND TOURISM</h2>
+                            </td>
+                        </tr>
+                        <tr class="no-border header-row">
+                            <td colspan="7" class="no-border align-center" >
+                                <h3 style="margin: 0; padding: 0;">CHANGE REQUEST LOG BOOK</h3>
+                            </td>
+                        </tr>
+                        <tr class="no-border header-row">
+                            <td colspan="7" class="no-border" >
+                                <h3 style="margin: 0; padding: 0;">{{ today | date:'d'}} {{ (today | date:'MMMM') | uppercase}}, {{ today | date:'yyyy'}}</h3>
+                            </td>
+                        </tr>
+                        <!-- <tr class="no-border header-row">
+                            <td colspan="7" class="no-border" >
+                                <h3 style="margin: 0; padding: 0;" [hidden]="isAllInst_selected">TAASISI/IDARA/KITENGO: {{selected_institution_name}}</h3>
+                            </td>
+                        </tr> -->
+                    </thead>
+                    <thead>
+                      <tr>
+                        <th scope="col">SN</th>
+                        <th scope="col" *ngIf ="leadersArray">REQUEST</th>
+                        <th scope="col">DESCRIPTION</th>
+                        <th scope="col">INSTITUTION</th>
+                        <th scope="col">SUBMISSION DATE</th>
+                        <th scope="col">REQUIRED DATE</th>
+                        <th scope="col">IMPLEMENTATION</th>
+                        <th scope="col">EXPLANATION</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let summary of activitysummaries; index as i">
+                        <th scope="row">{{i+1}}</th>
+                        <td *ngIf="leadersArray">{{summary.institution.inst_name}}</td>
+                        <td>{{summary.activity_desc}}</td>
+                        <td>{{summary.approved_budget | number:'1.2-2'}}</td>
+                        <td>{{summary.total_fund_received | number:'1.2-2'}}</td>
+                        <td>{{summary.activity_remark}}</td>
+                        <td>{{summary.total_fund_spent | number:'1.2-2'}}</td>
+                        <td></td>
+                      </tr>
+                      <!-- <tr *ngIf="activitysummaries.length == 0">
+                          <td colspan="8" class="align-center" >
+                            No Record
+                          </td>
+                      </tr> -->
+                      <!-- <tr *ngIf="activitysummaries.length != 0"> -->
+                      <tr>
+                        <td colspan="8" style="text-align: right; font-style: italic;" >
+                            Printed By: {{user_name}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Printed On: {{today | date:'M/d/yy, h:mm a'}} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Signature:.............................
+                        </td>
+                    </tr>
+                  </table>
+                  <div class=" row button-list" *ngIf="activitysummaries.length != 0">
+                    <div>
+                        <button class=" btn btn-success" (click)="exportexcel()"  >Export To EXCEL</button>
+                    </div>
+                    <!-- <div>
+                        <button class="btn btn-secondary" (click)=" generatePDF() "  >Download PDF</button>
+                    </div> -->
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

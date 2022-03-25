@@ -1,0 +1,102 @@
+<!-- spinner -->
+<div class="spinner-container">
+    <div *ngIf="sharedService.isLoading | async">
+        <mat-progress-bar mode="indeterminate" style="color: goldenrod;"></mat-progress-bar>
+    </div>
+</div>
+
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <div [matMenuTriggerFor]="menu" class="user-menu">
+        <mat-icon>person</mat-icon><small>{{user}}</small>
+        <i class="fa fa-caret-down"></i>
+    </div>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="showProfile()">
+            <mat-icon>subject</mat-icon>
+            <span>Profile</span>
+        </button>
+        <button mat-menu-item (click)="onChangePassword()">
+            <mat-icon>loop</mat-icon>
+            <span>Change Password</span>
+        </button>
+        <button mat-menu-item (click)="onLogout()">
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <div class="logo-image d-none d-md-block">
+            <img src="/assets/images/logo.png" alt="" class="log-img">
+        </div>
+        <h2>Change Request Management</h2>
+        <mat-divider></mat-divider>
+        <div class="navigation-menu" fxLayout="column" >
+
+            <!-- menu -->
+            <div id="MainMenu">
+                <div class="list-group panel menu-items">
+                    <!-- dashboard -->
+                    <a class="list-group-item list-group-item-success menu-button" routerLink="/dashboard" data-parent="#MainMenu">
+                        <mat-icon>dashboard</mat-icon>
+                        <span>Dashboard</span>
+                    </a><a class="list-group-item list-group-item-success menu-button" routerLink="/user/register" data-parent="#MainMenu">
+                        <mat-icon>people</mat-icon>
+                        <span>Registered Users</span>
+                    </a>
+                  
+                    <!-- activity progress -->
+                    <a href="#progress" class="list-group-item list-group-item-success menu-button" data-toggle="collapse" data-parent="#MainMenu">
+                        <mat-icon>track_changes</mat-icon>
+                        <span>Change Requests</span>
+                        <span class="example-spacer "></span>
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="collapse" id="progress">
+                        <a routerLink="/requesting/request" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Request Logs</a>
+                        <a routerLink="#" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Approvals</a>
+                        <a routerLink="/reports/logs" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Reports</a>
+                        
+                    </div>
+                    <a href="#config" class="list-group-item list-group-item-success menu-button" data-toggle="collapse" data-parent="#MainMenu">
+                        <mat-icon>settings</mat-icon>
+                        <span>System Setup</span>
+                        <span class="example-spacer "></span>
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div class="collapse" id="config">
+                        <a routerLink="/user/rolesandpermissions" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Roles and Permission</a>
+                        <a routerLink="/requesting/mnrtsystem" class="list-group-item sub-menu-button"><i class="fa fa-caret-right" ></i>Projects and System</a>                        
+                        <a routerLink="/requesting/institution" class="list-group-item sub-menu-button" ><i class="fa fa-caret-right"></i>Institutions</a>
+                        <a routerLink="/requesting/priority" class="list-group-item sub-menu-button"><i class="fa fa-caret-right" ></i>Priorities</a>
+                    </div>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <button mat-button class="menu-button">
+                <mat-icon>book</mat-icon>
+                <span>User Manual</span>
+            </button>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content style="padding: 8px;">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<div mat-footer class="footer">
+    All Rights Reserved &copy; {{ currentYear }} Ministry of Natural Resources and Tourism.
+</div>
+
+<!-- [hidden]="!permissions.rolesandpermissons" -->

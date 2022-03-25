@@ -1,0 +1,91 @@
+<form [formGroup]="RequestForm">
+  <h2 mat-dialog-title>Add New Request</h2>
+  <hr />
+  <mat-dialog-content>
+      <div class="form-group col-lg-12 col-sm-12 form-input">
+        <div class="form-row">
+          <div class="form-group col">
+              <label >Project/System</label>
+              <select formControlName="mnrtsystem" class="form-control form-control-sm">
+               <option value="" [selected]="true"></option>
+                <option *ngFor="let mnrtsystem of mnrtsystems" value="{{mnrtsystem.id}}" >{{mnrtsystem.mnrtsystem_name}}</option>
+              </select>
+              <div *ngIf="RequestForm.get('institution')?.touched && RequestForm.get('institution')?.invalid"
+                  class="text-danger">Cannot be blank</div>
+            </div>
+            <div class="form-group col">
+              <label >Request Category</label>
+              <select formControlName="category" class="form-control form-control-sm">
+                  <option value="" [selected]="true"></option>
+                  <option *ngFor="let category of categories" value="{{category.id}}" >{{category.category_name}}</option>
+              </select>
+              <div *ngIf="RequestForm.get('role')?.touched && RequestForm.get('role')?.invalid"
+                  class="text-danger">Cannot be blank</div>
+            </div>
+      </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Description</label>
+            <textarea placeholder="Comment" class="form-control form-control-sm" formControlName="description" placeholder="Enter Request Description"> </textarea>             
+            <small><div *ngIf="RequestForm.get('description')?.touched && RequestForm.get('description')?.invalid" class="text-danger">Enter Description</div></small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col">
+              <label >Priority</label>
+              <select formControlName="priority" class="form-control form-control-sm">
+               <option value="" [selected]="true"></option>
+                <option *ngFor="let priority of priorities" value="{{priority.id}}" >{{priority.priority_name}}</option>
+              </select>
+              <div *ngIf="RequestForm.get('institution')?.touched && RequestForm.get('institution')?.invalid"
+                  class="text-danger">Priority is required</div>
+            </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+            <label >Institution</label>
+            <select formControlName="institution" class="form-control form-control-sm">
+             <option value="" [selected]="true"></option>
+              <option *ngFor="let institution of institutions" value="{{institution.id}}" >{{institution.inst_name}}</option>
+            </select>
+            <div *ngIf="RequestForm.get('institution')?.touched && RequestForm.get('institution')?.invalid"
+                class="text-danger">Priority is required</div>
+          </div>
+    </div>
+
+      <div class="form-row">
+      <div class="form-group col">
+        <label>End Date</label>
+        <div class="input-group">
+          <input class="form-control form-control-sm" placeholder="yyyy-mm-dd"
+           formControlName="deadline" ngbDatepicker #d2="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+          </div>
+        </div>
+        <div *ngIf="RequestForm.get('deadline')?.touched && RequestForm.get('deadline')?.invalid"
+            class="text-danger">Deadline is required</div>
+      </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col">
+          <label>Reason</label>
+          <textarea placeholder="Comment" class="form-control form-control-sm" formControlName="reason" placeholder="Enter Request Description"> </textarea>             
+          <small><div *ngIf="RequestForm.get('reason')?.touched && RequestForm.get('reason')?.invalid" class="text-danger">Enter Reason</div></small>
+        </div>
+      </div>
+
+
+      </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+      <button class="btn btn-secondary" (click)="onClose()" style="margin-right: 10px;">Cancel</button>
+      <button  (click)="onSubmit()" type="submit" 
+          class="btn btn-success">Submit</button>
+  </mat-dialog-actions>
+</form>
+
+<!-- [disabled]="RequestForm.invalid" -->
+
