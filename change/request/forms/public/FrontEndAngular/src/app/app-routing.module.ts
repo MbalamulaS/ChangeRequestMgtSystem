@@ -20,10 +20,8 @@ const routes: Routes = [
       {
         path:'user',
         loadChildren: () => import('./authentication/authentication.module').then((module) => module.AuthenticationModule)
-      },       {
-        path:'reports',
-        loadChildren: () => import('./reports/reports.module').then((module) => module.ReportsModule)
-      },      
+      },       
+          
       {
         path:'requesting',
         loadChildren: () => import('./request/request.module').then((module) => module.RequestModule)
