@@ -30,7 +30,7 @@ class UserController extends Controller
                     'message'=>'All Users successfully fetched',
                     'data'=>$user
                     ],200);
-    
+
     }
 
 
@@ -56,7 +56,7 @@ class UserController extends Controller
             "institution_id" => "required",
             "role_id" => "required",
             "password"  =>  "required",
-        
+
         ]);
 
         if($validator->fails()) {
@@ -73,7 +73,7 @@ class UserController extends Controller
         }
         else {
             return response()->json(["status" => "failed", "message" => "Registration failed!"]);
-        }       
+        }
     }/*end of registration*/
 
 
@@ -101,17 +101,18 @@ class UserController extends Controller
         //return $this->respondWithToken($token);
         //$token = $this->respondWithToken($token);
 
+        // return response()->json(["status" => "success", "login" => true, "token" => $token]);
         return response()->json(["status" => "success", "login" => true, "token" => $token, "data" => $user]);
     } /*end of login*/
-   
-   
+
+
     //User logout
     public function logout(){
         $this->guard()->logout();
         return response()->json(['message' => 'Logged out successfully']);
     }/*end of logout*/
-    
-    
+
+
     //User user profile
     public function profile(){
         return response()->json($this->guard()->user());
@@ -130,21 +131,21 @@ class UserController extends Controller
         ]);
 
     }/*end of token refresh*/
-    
-    
+
+
     //User Detail
     public function user() {
         $user       =       Auth::user();
-        if(!is_null($user)) { 
+        if(!is_null($user)) {
             return response()->json(["status" => "success", "data" => $user]);
         }
 
         else {
             return response()->json(["status" => "failed", "message" => "Whoops! no user found"]);
-        }        
+        }
     }/*end of user details*/
 
-    
+
     //Fetch user by institution ID
     public function list(Request $request)
     {
@@ -158,12 +159,12 @@ class UserController extends Controller
                     'message'=>'Users successfully fetched',
                     'data'=>$user
                     ],200);
-    
+
     }/*end of fetch by institution ID*/
-    
+
     //Authenticatio Guard
     protected function guard(){
-        return Auth::guard();  
+        return Auth::guard();
     }/*end of guard*/
 }
 

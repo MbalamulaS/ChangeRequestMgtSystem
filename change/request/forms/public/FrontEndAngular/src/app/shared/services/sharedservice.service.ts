@@ -13,13 +13,13 @@ export class SharedserviceService {
   public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  
+
   constructor(private snackBar: MatSnackBar, private httpClient: HttpClient) { }
 
   private handleError(errorResponse: HttpErrorResponse){
-    return throwError(errorResponse.error); 
+    return throwError(errorResponse.error);
   }
-  
+
   //Success snark
   openSnackBar(message: string) {
     this.snackBar.open(message, 'close', {
@@ -43,6 +43,8 @@ export class SharedserviceService {
   getactivitiesByInstID(id:any): Observable <any>{
     return this.httpClient.get( environment.baseURL+'api/viewactivity?institution_id='+id).pipe(catchError(this.handleError));;
   }
+
+
 
   getContractsByInstID(id:any): Observable <any>{
     return this.httpClient.get( environment.baseURL+'api/view-contract?instituion_id='+id).pipe(catchError(this.handleError));;
@@ -70,6 +72,14 @@ export class SharedserviceService {
 
   getInstitutions(): Observable <any>{
     return this.httpClient.get( environment.baseURL+'api/institutions').pipe(catchError(this.handleError));
+  }
+
+  getSystemsList(): Observable <any>{
+    return this.httpClient.get( environment.baseURL+'api/mnrtsystems').pipe(catchError(this.handleError));
+  }
+
+  getRequestList(): Observable <any>{
+    return this.httpClient.get( environment.baseURL+'api/request').pipe(catchError(this.handleError));
   }
 
   getRoles(): Observable <any>{

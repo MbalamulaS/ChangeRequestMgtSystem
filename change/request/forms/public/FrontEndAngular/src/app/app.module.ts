@@ -23,6 +23,7 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatProgressBarModule} from '@angular/material/progress-bar';
 import { CustommaterialsModule } from './custommaterials/custommaterials.module';
 import { HttpinterceptorService } from './shared/services/httpinterceptor.service';
+import { HashLocationStrategy, Location} from '@angular/common';
 
 @NgModule({
   declarations: [

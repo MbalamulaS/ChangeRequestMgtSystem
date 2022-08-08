@@ -18,7 +18,10 @@ export class DashboardComponent implements OnInit {
   users_count: any
   institutions_count: any;
   activities:any[] = [];
+  mnrtsystems:any[] = [];
   activity_count: number = 0;
+  mnrtsystems_count: number = 0;
+  request_count: number = 0;
   contract_count: number = 0;
   activitysummaries:any[] = [];
   activityprogressmilestone: any[] = []
@@ -33,6 +36,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getUsersCount();
     this.getInstitutionssCount();
+    this.getMnrtSystemsCount();
+    this.getRequestCount();
 
     //get role and permission
     this.checklist_rolepermission(localStorage.getItem('role_id'));
@@ -40,10 +45,10 @@ export class DashboardComponent implements OnInit {
     //get intitutions and milestones
     this.getActivitiesByInstID(localStorage.getItem('institution_id'))
 
-    //get contracts 
+    //get contracts
     this.getContractsByInstID(localStorage.getItem('institution_id'))
 
-    
+
   }
 
   getUsersCount(){
@@ -63,7 +68,31 @@ export class DashboardComponent implements OnInit {
     this.sharedService.getInstitutions().subscribe(result=>{
       this.sharedService.isLoading.next(false);
 
+      this.mnrtsystems_count  = result.data.length;
+
+    },errorResponse=>{
+      console.log("Error: "+ errorResponse);
+    });
+  }
+
+  getMnrtSystemsCount(){
+    this.sharedService.isLoading.next(true);
+    this.sharedService.getSystemsList().subscribe(result=>{
+      this.sharedService.isLoading.next(false);
+
       this.institutions_count  = result.data.length;
+
+    },errorResponse=>{
+      console.log("Error: "+ errorResponse);
+    });
+  }
+
+  getRequestCount(){
+    this.sharedService.isLoading.next(true);
+    this.sharedService.getRequestList().subscribe(result=>{
+      this.sharedService.isLoading.next(false);
+
+      this.request_count  = result.data.length;
 
     },errorResponse=>{
       console.log("Error: "+ errorResponse);
@@ -97,6 +126,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+
   getContractsByInstID(inst_id:any){
     this.sharedService.isLoading.next(true);
     this.sharedService.getContractsByInstID(inst_id).subscribe(result=>{
@@ -122,7 +152,7 @@ export class DashboardComponent implements OnInit {
         if(this.userrolepermissionArray[i].permission.permission_code == 'viewadmindashboard'){
           this.permissions.viewadmindashboard = true;
         }
-        
+
 
       }
     },errorResponse=>{
