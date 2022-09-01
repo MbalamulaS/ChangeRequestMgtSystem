@@ -26,10 +26,6 @@ const routes: Routes = [
         path:'requesting',
         loadChildren: () => import('./request/request.module').then((module) => module.RequestModule)
       },
-      {
-        path:'contracts',
-        loadChildren: () => import('./contractmanagement/contractmanagement.module').then((module) => module.ContractmanagementModule)
-      },
     ]
   }
   
